@@ -1,6 +1,6 @@
 working_dir: &working_dir ~/app 
 .build_template: &script 
-  parallelism: 16 
+  parallelism: 2 
   steps: 
     - checkout 
     - run: 
@@ -137,8 +137,92 @@ jobs:
   build30: 
     <<: *script 
     docker: 
+      - image: ruby
+  build31: 
+    <<: *script 
+    docker: 
       - image: ruby 
- 
+  build32: 
+    <<: *script 
+    docker: 
+      - image: ruby 
+  build33: 
+    <<: *script 
+    docker: 
+      - image: ruby 
+  build34: 
+    <<: *script 
+    docker: 
+      - image: ruby 
+  build35: 
+    <<: *script 
+    docker: 
+      - image: ruby 
+  build36: 
+    <<: *script 
+    docker: 
+      - image: ruby 
+  build37: 
+    <<: *script 
+    docker: 
+      - image: ruby 
+  build38: 
+    <<: *script 
+    docker: 
+      - image: ruby 
+  build39: 
+    <<: *script 
+    docker: 
+      - image: ruby 
+  build40: 
+    <<: *script 
+    docker: 
+      - image: ruby 
+  build41: 
+    <<: *script 
+    docker: 
+      - image: ruby 
+  build42: 
+    <<: *script 
+    docker: 
+      - image: ruby 
+  build43: 
+    <<: *script 
+    docker: 
+      - image: ruby 
+  build44: 
+    <<: *script 
+    docker: 
+      - image: ruby 
+  build45: 
+    <<: *script 
+    docker: 
+      - image: ruby 
+  build46: 
+    <<: *script 
+    docker: 
+      - image: ruby 
+  build47: 
+    <<: *script 
+    docker: 
+      - image: ruby 
+  build48: 
+    <<: *script 
+    docker: 
+      - image: ruby 
+  build49: 
+    <<: *script 
+    docker: 
+      - image: ruby 
+  build50: 
+    <<: *script 
+    docker: 
+      - image: ruby 
+  build51: 
+    <<: *script 
+    docker: 
+      - image: ruby
+      
 workflows: 
   version: 2 
   commit: 
@@ -173,3 +257,24 @@ workflows:
       - build28 
       - build29 
       - build30
+      - build31 
+      - build32 
+      - build33
+      - build34 
+      - build35 
+      - build36 
+      - build37 
+      - build38 
+      - build39 
+      - build40 
+      - build41 
+      - build42 
+      - build43 
+      - build44 
+      - build45 
+      - build46 
+      - build47 
+      - build48 
+      - build49 
+      - build50 
+      - build51
